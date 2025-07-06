@@ -1,0 +1,170 @@
+/* Estilos gerais para o corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* Um cinza claro suave para o fundo */
+  color: #333; /* Cor de texto principal */
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  
+  /* Centraliza todo o conteúdo da página */
+  display: flex;
+  flex-direction: column; /* Itens empilhados verticalmente */
+  align-items: center; /* Centraliza horizontalmente os itens flex */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+}
+
+h1 {
+  color: #2c3e50; /* Um azul escuro para o título */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 600; /* Mais negrito */
+}
+
+/* Estilo para o formulário principal */
+.media-form {
+  background-color: #ffffff; /* Fundo branco para o formulário */
+  padding: 30px;
+  border-radius: 10px; /* Bordas mais arredondadas */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave e proeminente */
+  max-width: 500px; /* Largura máxima para o formulário */
+  width: 100%; 
+  margin: 0 auto 30px auto;
+  margin-bottom: 30px; /* Espaço abaixo do formulário */
+  display: grid;
+  gap: 18px; /* Espaço entre os grupos de input */
+}
+
+/* Estilo para cada grupo de input (label + input) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1em;
+}
+
+.input-group input[type="number"] {
+  padding: 12px;
+  border: 1px solid #ced4da; /* Borda cinza suave */
+  border-radius: 6px;
+  font-size: 1.1em;
+  width: 100%;
+  box-sizing: border-box; /* Inclui padding e border no width total */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transição suave ao focar */
+}
+
+.input-group input[type="number"]:focus {
+  outline: none; /* Remove o contorno padrão */
+  border-color: #007bff; /* Borda azul ao focar */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra suave azul ao focar */
+}
+
+.input-group input[type="number"]:disabled {
+  background-color: #e9ecef; /* Fundo mais claro quando desabilitado */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Estilo para o grupo de botões */
+.button-group {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.button-group button {
+  background-color: #007bff; /* Cor de fundo azul principal */
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.15em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Transições para hover e click */
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Sombra para o botão */
+}
+
+.button-group button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+  transform: translateY(-2px); /* Efeito de "levantar" no hover */
+}
+
+.button-group button:active {
+  transform: translateY(0); /* Volta à posição normal no click */
+}
+
+.button-group button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Estilos para a seção de resultados */
+h3 {
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.results {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Garante que a caixa não se estique infinitamente */
+  width: 100%;     /* Garante que a caixa tente ocupar 100% até o max-width */
+  display: grid;
+  gap: 12px;
+  margin: 20px auto; /* **Esta é a linha da centralização** */
+}
+
+.result-item {
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0e0e0; /* Linha tracejada suave */
+  display: flex;
+  justify-content: space-between; /* Alinha rótulo à esquerda e valor à direita */
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.result-item:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+.result-item strong {
+  color: #444;
+  flex-basis: 50%; /* Garante que o rótulo ocupe metade do espaço */
+}
+
+.result-item span {
+  font-weight: 600;
+  color: #007bff; /* Cor azul para os valores dos resultados */
+  text-align: right;
+  flex-basis: 50%; /* Garante que o valor ocupe metade do espaço */
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 600px) {
+  .media-form, .results {
+    padding: 20px;
+    margin: 0 15px; /* Margem nas laterais para não grudar nas bordas em telas pequenas */
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .button-group button {
+    padding: 12px 20px;
+    font-size: 1.05em;
+  }
+}

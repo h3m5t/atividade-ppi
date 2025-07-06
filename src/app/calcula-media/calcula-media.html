@@ -1,59 +1,54 @@
 <h1>Média - PPI</h1>
 
-<form>
-  <div>
+<form class="media-form">
+  <div class="input-group">
     <label for="b1">Bim 1</label>
-    <input id="b1" type="number" [(ngModel)]="notaB1" name="bim1">
+    <input id="b1" type="number" [(ngModel)]="notaB1" name="bim1" min="0" max="100">
   </div>
 
-  <div>
+  <div class="input-group">
     <label for="b2">Bim 2</label>
-    <input id="b2" type="number" [(ngModel)]="notaB2" name="bim2">
+    <input id="b2" type="number" [(ngModel)]="notaB2" name="bim2" min="0" max="100">
   </div>
 
-  <div>
+  <div class="input-group">
     <label for="b3">Bim 3</label>
-    <input id="b3" type="number" [(ngModel)]="notaB3" name="bim3">
+    <input id="b3" type="number" [(ngModel)]="notaB3" name="bim3" min="0" max="100">
   </div>
 
-  <div>
+  <div class="input-group">
     <label for="b4">Bim 4</label>
-    <input id="b4" type="number" [(ngModel)]="notaB4" name="bim4">
+    <input id="b4" type="number" [(ngModel)]="notaB4" name="bim4" min="0" max="100">
   </div>
 
-<div>
+  <div class="input-group">
     <label for="PV">Prova Final</label>
-    <input id="PV" type="number" [(ngModel)]="ProvaFinal" name="PV">
+   <input id="PV" type="number" [(ngModel)]="ProvaFinal" name="PV" min="0" max="100"
+       [disabled]="situacaoParcial !== Situacao.AVFINAL">
   </div> 
 
-  <div>
-    <input type="button" value="Calcular" (click)="CalculoParcial()">
+  <div class="button-group">
+    <button type="button" (click)="CalcularTudo()">Calcular Média</button>
   </div>
-
-   <div>
-    <input type="button" value="Recalcular" (click)="CalculoFinal(); CalculoMediaFinal()">
-  </div>
-
 </form>
+
+---
 
 <h3>Resultados:</h3>
 
-<div>
-  Situação Parcial: {{situacaoParcial}}
+<div class="results">
+  <div class="result-item">
+    <strong>Situação Parcial:</strong> <span>{{ situacaoParcial }}</span>
+  </div>
+
+  <div class="result-item">
+    <strong>Média Parcial:</strong> <span>{{ mediaParcial }}</span> </div>
+
+  <ng-container *ngIf="situacaoFinal !== Situacao.INDETERMINADO || mediaFinal !== undefined">
+    <div class="result-item">
+      <strong>Situação Final:</strong> <span>{{ situacaoFinal }}</span>
+    </div>
+    <div class="result-item">
+      <strong>Média Final:</strong> <span>{{ mediaFinal | number:'1.2-2' }}</span> </div>
+  </ng-container>
 </div>
-
-<div>
-  Média Parcial: {{mediaParcial}}
-</div>
-
-<div>
-  SituaçãoFinal: {{situacaoFinal}}
-</div>
-<div>
-  Média Final:{{mediaFinal}}
-</div>
-
-
-
-
-
