@@ -1,31 +1,59 @@
-<h1>Média PPI</h1>
+<h1>Média - PPI</h1>
+
 <form>
-    <div class="mb-3">
-        <label for="b1" class="form-label">Bim 1</label>
-        <input id="b1" class="form-control" type="number" #b1>
-    </div>
-    <div>
-        <label for="b2" class="form-label">Bim 2</label>
-        <input id="b2" class="form-control" type="number" #b2>
-    </div>
-     <div>
-        <label for="b3"  class="form-label">Bim 3</label>
-        <input id="b3" class="form-control" type="number" #b3>
-    </div>
-     <div>
-        <label for="b4"  class="form-label">Bim 4</label>
-        <input id="b4" class="form-control" type="number" #b4>
-    </div>
-    <div>
-        <input type="button" value="Calcular"
-               (click)="calcularMediaParcial(
-                       +b1.value, +b2.value,
-                       +b3.value, +b4.value)">
-    </div>
+  <div>
+    <label for="b1">Bim 1</label>
+    <input id="b1" type="number" [(ngModel)]="notaB1" name="bim1">
+  </div>
+
+  <div>
+    <label for="b2">Bim 2</label>
+    <input id="b2" type="number" [(ngModel)]="notaB2" name="bim2">
+  </div>
+
+  <div>
+    <label for="b3">Bim 3</label>
+    <input id="b3" type="number" [(ngModel)]="notaB3" name="bim3">
+  </div>
+
+  <div>
+    <label for="b4">Bim 4</label>
+    <input id="b4" type="number" [(ngModel)]="notaB4" name="bim4">
+  </div>
+
+<div>
+    <label for="PV">Prova Final</label>
+    <input id="PV" type="number" [(ngModel)]="ProvaFinal" name="PV">
+  </div> 
+
+  <div>
+    <input type="button" value="Calcular" (click)="CalculoParcial()">
+  </div>
+
+   <div>
+    <input type="button" value="Recalcular" (click)="CalculoFinal(); CalculoMediaFinal()">
+  </div>
+
 </form>
-<div>{{situacao}}</div>
 
+<h3>Resultados:</h3>
 
-<div *ngIf="mediaParcial != undefined">
-   <p>Média Parcial = {{mediaParcial}}</p>
+<div>
+  Situação Parcial: {{situacaoParcial}}
 </div>
+
+<div>
+  Média Parcial: {{mediaParcial}}
+</div>
+
+<div>
+  SituaçãoFinal: {{situacaoFinal}}
+</div>
+<div>
+  Média Final:{{mediaFinal}}
+</div>
+
+
+
+
+
