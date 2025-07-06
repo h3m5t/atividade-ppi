@@ -1,0 +1,31 @@
+<h1>Média PPI</h1>
+<form>
+    <div class="mb-3">
+        <label for="b1" class="form-label">Bim 1</label>
+        <input id="b1" class="form-control" type="number" #b1>
+    </div>
+    <div>
+        <label for="b2" class="form-label">Bim 2</label>
+        <input id="b2" class="form-control" type="number" #b2>
+    </div>
+     <div>
+        <label for="b3"  class="form-label">Bim 3</label>
+        <input id="b3" class="form-control" type="number" #b3>
+    </div>
+     <div>
+        <label for="b4"  class="form-label">Bim 4</label>
+        <input id="b4" class="form-control" type="number" #b4>
+    </div>
+    <div>
+        <input type="button" value="Calcular"
+               (click)="calcularMediaParcial(
+                       +b1.value, +b2.value,
+                       +b3.value, +b4.value)">
+    </div>
+</form>
+<div>{{situacao}}</div>
+
+
+<div *ngIf="mediaParcial != undefined">
+   <p>Média Parcial = {{mediaParcial}}</p>
+</div>
