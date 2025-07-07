@@ -3,5 +3,5 @@ export enum Situacao {
     APROVADO = 'Aprovado(a)',
     AVFINAL  = 'Avaliação Final',
     REPROVADO = 'Reprovado(a)',
-    INDETERMINADO = " "
+    INDETERMINADO = "Ibdeterminado(a)"
 }
